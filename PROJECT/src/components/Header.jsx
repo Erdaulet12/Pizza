@@ -1,4 +1,6 @@
 import logo from "../assets/images/logo.svg";
+import { CART } from "../utils/consts";
+import { Link } from "react-router-dom";
 function Header() {
   return (
     <header class="header">
@@ -7,7 +9,9 @@ function Header() {
           <img src={logo} alt="Logo" />
           <span class="logo-text">Pizzafy.</span>
         </div>
-        <button class="cart-button">Корзина : 0</button>
+        <Link to={CART} class="cart-button">
+          Корзина : 0{" "}
+        </Link>
       </div>
     </header>
   );

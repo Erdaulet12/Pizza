@@ -1,8 +1,12 @@
+import { CHECKOUT, HOME } from "../utils/consts";
+import { Link } from "react-router-dom";
 function Cart() {
   return (
     <section class="block">
       <div class="container">
-        <button class="back-btn">Назад</button>
+        <Link to={HOME} class="back-btn">
+          Назад{" "}
+        </Link>
         <h1 class="title">Моя корзина</h1>
         <table class="cart-table">
           <thead>
@@ -42,8 +46,12 @@ function Cart() {
         </table>
         <h3 class="total-price">Итого: 1234 &#8376;</h3>
         <div class="cart-action">
-          <button class="cart-action__btn">Оформление заказа</button>
-          <button class="cart-action__btn">Продолжить покупку</button>
+          <Link to={CHECKOUT} class="cart-action__btn">
+            Оформление заказа
+          </Link>
+          <Link to={HOME} class="cart-action__btn">
+            Продолжить покупку
+          </Link>
         </div>
       </div>
     </section>
