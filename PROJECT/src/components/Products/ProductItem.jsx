@@ -1,12 +1,12 @@
-function ProductItem() {
+function ProductItem({ product }) {
   return (
     <div class="product-item">
-      <img src="./images/placeholder.svg" alt="" class="product-item__img" />
-      <h3 class="product-item__title">Name</h3>
-      <p class="product-item__description">Description</p>
-      <p class="product-item__description">category</p>
+      <img src={product.image} alt={product.name} class="product-item__img" />
+      <h3 class="product-item__title">{product.name}</h3>
+      <p class="product-item__description">{product.description}</p>
+      <p class="product-item__description">{product.category}</p>
       <div class="product-item__action">
-        <strong class="product-item__title">price &#8376;</strong>
+        <strong class="product-item__title">{product.price} &#8376;</strong>
         <button class="add-button">В корзину</button>
       </div>
     </div>

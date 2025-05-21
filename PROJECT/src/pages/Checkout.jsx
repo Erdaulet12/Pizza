@@ -1,8 +1,12 @@
+import { CART } from "../utils/consts";
+
 function Checkout() {
   return (
     <section class="block">
       <div class="container">
-        <button class="back-btn">Назад</button>
+        <Link to={CART} class="back-btn">
+          Назад
+        </Link>
         <h1 class="title">Оформление заказа</h1>
         <form class="form">
           <div class="form-control">

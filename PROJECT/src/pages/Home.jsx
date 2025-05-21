@@ -1,9 +1,9 @@
 import ProductList from "../components/Products/ProductList";
-import slideOne from "./images/home/1.webp";
-import slideTwo from "./images/home/2.webp";
-import slideThree from "./images/home/3.webp";
-import slideFour from "./images/home/4.webp";
-import slideFive from "./images/home/5.webp";
+import slideOne from "../assets/images/home/1.webp";
+import slideTwo from "../assets/images/home/2.webp";
+import slideThree from "../assets/images/home/3.webp";
+import slideFour from "../assets/images/home/4.webp";
+import slideFive from "../assets/images/home/5.webp";
 
 function Home() {
   return (
