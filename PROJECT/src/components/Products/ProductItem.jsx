@@ -1,4 +1,10 @@
 function ProductItem({ product }) {
+  const { addToCart } = useCart();
+
+  function handleAddToCart() {
+    addToCart(product);
+  }
+
   return (
     <div class="product-item">
       <img src={product.image} alt={product.name} class="product-item__img" />
@@ -6,8 +12,12 @@ function ProductItem({ product }) {
       <p class="product-item__description">{product.description}</p>
       <p class="product-item__description">{product.category}</p>
       <div class="product-item__action">
-        <strong class="product-item__title">{product.price} &#8376;</strong>
-        <button class="add-button">В корзину</button>
+        <strong class="product-item__title">
+          {product.price.ToLocaleString} &#8376;
+        </strong>
+        <button class="add-button" onClick={handleAddToCart}>
+          В корзину
+        </button>
       </div>
     </div>
   );
