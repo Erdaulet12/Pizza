@@ -68,7 +68,7 @@ function Cart() {
                           >
                             -
                           </button>
-                          <span>1</span>
+                          <span>{item.quantity}</span>
                           <button
                             class="circle"
                             onClick={() =>

@@ -1,6 +1,8 @@
 import logo from "../assets/images/logo.svg";
 import { CART } from "../utils/consts";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
+
 function Header() {
   const { totalQuantity } = useCart();
 
