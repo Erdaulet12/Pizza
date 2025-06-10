@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <CartProvider>
-        <Header />;
+        <Header />
         <main>
           <Routes>
             <Route path={HOME} element={<Home />} />

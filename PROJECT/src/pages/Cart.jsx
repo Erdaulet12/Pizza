@@ -1,10 +1,12 @@
+import { useCart} from "../context/CartContext";
 import { CHECKOUT, HOME } from "../utils/consts";
 import { Link, useNavigate } from "react-router-dom";
 function Cart() {
+  const Navigate = useNavigate();
   const {
     cartItems,
     totalPrice,
-    removeFormCart,
+    removeFromCart,
     increaseQuantity,
     decreaseQuantity,
   } = useCart();
@@ -23,11 +25,11 @@ function Cart() {
           <section className="block">
             <div className="container">
               <Link to={HOME} class="back-btn">
-                Ha3ag
+                Haзад
               </Link>
               <h1 class="title">Моя корзина</h1>
               <p className="alert-danger">
-                Ваша корзина пуста, добавьте товары чтобы получить бонусык/
+                Ваша корзина пуста, добавьте товары чтобы получить бонусы
               </p>
             </div>
           </section>
@@ -56,7 +58,7 @@ function Cart() {
                     <tr>
                       <td>{item.id}</td>
                       <td>
-                        <img src={item.name} class="cart-img" alt={item.name} />
+                        <img src={item.image} class="cart-img" alt={item.name} />
                       </td>
                       <td>{item.price.toLocaleString()} &#8376;</td>
                       <td>
@@ -72,18 +74,17 @@ function Cart() {
                           <button
                             class="circle"
                             onClick={() =>
-                              increaseQuantity(item.decreaseQuantity)
+                              increaseQuantity(item.id)
                             }
                           >
                             +
                           </button>
                         </div>
                       </td>
-                      <td>Итого: {totalPrice.toLocaleString()}&#8376;</td>
+                      <td>Итого: {(item.price * item.quantity).toLocaleString()}</td>
                       <td>
                         <button
-                          button
-                          onClick={() => removeFormCart(item.id)}
+                          onClick={() => removeFromCart(item.id)}
                           class="delete-btn"
                         >
                           Удалить
@@ -93,7 +94,7 @@ function Cart() {
                   ))}
                 </tbody>
               </table>
-              <h3 class="total-price">Итого: 1234 &#8376;</h3>
+              <h3 class="total-price">Итого: {totalPrice.toLocaleString()} &#8376;</h3>
               <div class="cart-action">
                 <button onClick={handleCheckout} class="cart-action__btn">
                   Оформление заказа

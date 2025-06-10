@@ -15,7 +15,7 @@ function ProductItem({ product }) {
       <p class="product-item__description">{product.category}</p>
       <div class="product-item__action">
         <strong class="product-item__title">
-          {product.price.ToLocaleString} &#8376;
+          {product.price.toLocaleString()} &#8376;
         </strong>
         <button class="add-button" onClick={handleAddToCart}>
           В корзину
